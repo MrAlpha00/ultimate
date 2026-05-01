@@ -1,12 +1,27 @@
 @import "tailwindcss";
 
 :root {
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+  --primary: #6366F1;
+  --accent: #8B5CF6;
+  --text-sub: #64748B;
+  --border: #E2E8F0;
+  --section-bg: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.dark {
   --background: #0B0B0F;
   --foreground: #F3F4F6;
-  --primary: #7C3AED;
-  --accent: #22D3EE;
-  --card: #111827;
-  --glow: rgba(124, 58, 237, 0.5);
+  --text-sub: #94A3B8;
+  --border: #1E293B;
+  --section-bg: #111827;
+  --card-bg: #111827;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
 }
 
 @theme inline {
@@ -14,50 +29,18 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
-  --color-card: var(--card);
-  --color-glow: var(--glow);
-  --font-sans: var(--font-geist-sans);
+  --color-text-sub: var(--text-sub);
+  --color-border: var(--border);
+  --color-section-bg: var(--section-bg);
+  --color-card-bg: var(--card-bg);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
-}
-
-@utility glass {
-  background: rgba(17, 24, 39, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(124, 58, 237, 0.2);
-}
-
-@utility glow-purple {
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
-}
-
-@utility glow-cyan {
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.4), 0 0 40px rgba(34, 211, 238, 0.2);
-}
-
-@utility text-gradient {
-  background: linear-gradient(135deg, #7C3AED, #22D3EE);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@utility bg-gradient-main {
-  background: linear-gradient(135deg, #0B0B0F 0%, #1a0a2e 50%, #0B0B0F 100%);
-}
-
-@utility btn-gradient {
-  background: linear-gradient(135deg, #7C3AED, #22D3EE);
-  transition: all 0.3s ease;
-}
-
-@utility btn-gradient-hover {
-  background: linear-gradient(135deg, #6D28D9, #06B6D4);
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.6), 0 0 60px rgba(34, 211, 238, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
