@@ -5,34 +5,26 @@ import SearchBar from "./SearchBar";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-main overflow-hidden">
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        animate={{
-          background: [
-            "radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.3) 0%, transparent 50%)",
-            "radial-gradient(circle at 80% 50%, rgba(34, 211, 238, 0.3) 0%, transparent 50%)",
-            "radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.3) 0%, transparent 50%)",
-          ],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-section-bg px-6 lg:px-12 pt-16 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
-      <div className="relative z-10 px-4 text-center max-w-4xl mx-auto">
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
         <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-6 text-gradient"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-5xl md:text-7xl font-bold text-foreground tracking-tight leading-tight mb-6"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Everything you need. One platform.
+          Everything you need.{" "}
+          <br className="hidden sm:block" />
+          <span className="text-primary">One platform.</span>
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl text-gray-300 mb-12"
+          className="text-lg md:text-xl text-text-sub mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         >
           Services, tools, courses — all in PUREons
         </motion.p>
@@ -40,7 +32,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="w-full max-w-2xl mx-auto"
         >
           <SearchBar />

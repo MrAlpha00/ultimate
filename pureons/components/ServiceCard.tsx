@@ -12,32 +12,26 @@ interface ServiceCardProps {
 export default function ServiceCard({ service, index }: ServiceCardProps) {
   return (
     <motion.div
-      className="glass rounded-2xl p-6 transition-all duration-300 hover:scale-105 hover:border-primary/50 hover:glow-purple group cursor-pointer"
-      initial={{ opacity: 0, y: 30 }}
+      className="bg-card-bg border border-border rounded-xl p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group cursor-pointer"
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
     >
-      <div className="w-full h-40 rounded-xl bg-gradient-main mb-4 flex items-center justify-center overflow-hidden">
-        <div className="text-6xl opacity-80 group-hover:scale-110 transition-transform duration-300">
-          {service.image.startsWith("/images/") ? (
-            <div className="w-16 h-16 rounded-full btn-gradient flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">
-                {service.title.charAt(0)}
-              </span>
-            </div>
-          ) : (
-            <span>{service.image}</span>
-          )}
+      <div className="w-full h-40 rounded-lg bg-section-bg mb-5 flex items-center justify-center overflow-hidden">
+        <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+          <span className="text-primary text-xl font-semibold">
+            {service.title.charAt(0)}
+          </span>
         </div>
       </div>
 
-      <h3 className="text-xl font-semibold text-white mb-2">{service.title}</h3>
-      <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+      <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+      <p className="text-text-sub text-sm mb-5">{service.description}</p>
 
-      <button className="btn-gradient text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 group-hover:btn-gradient-hover transition-all duration-300">
+      <button className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all duration-300">
         Explore
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        <ArrowRight className="w-4 h-4" />
       </button>
     </motion.div>
   );

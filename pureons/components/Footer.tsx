@@ -2,23 +2,25 @@ import { categories } from "@/data/services";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-800 py-12 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="border-t border-border py-16 px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
-          <h3 className="text-2xl font-bold text-gradient mb-4">PUREons</h3>
-          <p className="text-gray-400 text-sm">
+          <h3 className="text-xl font-bold text-foreground mb-3">
+            PURE<span className="text-primary">ons</span>
+          </h3>
+          <p className="text-text-sub text-sm leading-relaxed">
             Everything you need. One platform.
           </p>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-4">Categories</h4>
-          <ul className="space-y-2">
+          <h4 className="text-foreground font-semibold mb-4">Categories</h4>
+          <ul className="space-y-3">
             {categories.slice(1).map((cat) => (
               <li key={cat}>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm"
+                  className="text-text-sub hover:text-primary transition-colors duration-200 text-sm"
                 >
                   {cat}
                 </a>
@@ -28,13 +30,13 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-4">Company</h4>
-          <ul className="space-y-2">
+          <h4 className="text-foreground font-semibold mb-4">Company</h4>
+          <ul className="space-y-3">
             {["About", "Careers", "Blog", "Contact"].map((item) => (
               <li key={item}>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm"
+                  className="text-text-sub hover:text-primary transition-colors duration-200 text-sm"
                 >
                   {item}
                 </a>
@@ -44,13 +46,13 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-semibold mb-4">Legal</h4>
-          <ul className="space-y-2">
+          <h4 className="text-foreground font-semibold mb-4">Legal</h4>
+          <ul className="space-y-3">
             {["Privacy", "Terms", "Cookies", "Licenses"].map((item) => (
               <li key={item}>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm"
+                  className="text-text-sub hover:text-primary transition-colors duration-200 text-sm"
                 >
                   {item}
                 </a>
@@ -60,8 +62,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center">
-        <p className="text-gray-500 text-sm">
+      <div className="max-w-7xl mx-auto mt-14 pt-8 border-t border-border text-center">
+        <p className="text-text-sub text-sm">
           &copy; {new Date().getFullYear()} PUREons. All rights reserved.
         </p>
       </div>

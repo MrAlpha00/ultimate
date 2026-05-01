@@ -14,7 +14,7 @@ export default function CategoryBar({
 }: CategoryBarProps) {
   return (
     <motion.div
-      className="flex gap-3 overflow-x-auto py-4 px-4 scrollbar-hide"
+      className="flex gap-3 overflow-x-auto py-4 px-1 scrollbar-hide"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -24,10 +24,10 @@ export default function CategoryBar({
         <button
           key={category}
           onClick={() => onCategoryChange(category)}
-          className={`px-5 py-2 rounded-full whitespace-nowrap text-sm font-medium transition-all duration-300 ${
+          className={`px-5 py-2.5 rounded-full whitespace-nowrap text-sm font-medium transition-all duration-300 ${
             activeCategory === category
-              ? "btn-gradient text-white glow-purple"
-              : "glass text-gray-300 hover:text-white hover:border-primary/40"
+              ? "bg-primary text-white shadow-md"
+              : "bg-section-bg text-text-sub border border-border hover:border-primary/30 hover:text-foreground"
           }`}
         >
           {category}

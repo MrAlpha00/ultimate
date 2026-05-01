@@ -18,15 +18,15 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 
   return (
     <div className="relative w-full">
-      <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-        <Search className="w-5 h-5 text-gray-400" />
+      <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+        <Search className="w-5 h-5 text-text-sub" />
       </div>
       <input
         type="text"
         value={query}
         onChange={handleChange}
         placeholder="Search services, tools, courses..."
-        className="w-full pl-12 pr-4 py-4 rounded-2xl glass text-gray-100 placeholder-gray-400 text-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 focus:glow-purple"
+        className="w-full pl-14 pr-6 py-4 rounded-full bg-card-bg border border-border text-foreground placeholder:text-text-sub text-base shadow-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
       />
     </div>
   );
